@@ -1,5 +1,6 @@
 const fs = require('fs')
-const { TabularRepresentation } = require('./tabularRep.js')
+const { TabularRepresentation } = require('./tabularRep.js');
+const { BarGraphRepresentation } = require('./barGraphRep.js');
 
 const csvData = fs.readFileSync('data.csv', 'utf-8');
 
@@ -23,10 +24,10 @@ for (let i = 4; i < rows.length; i++) {
     }
 }
 
-debarredFromTerm.sort((student1, student2) => student2.leaves - student1.leaves)
-
 maxNameLen += 10
 
-console.log('Debarred From 6th sem exam: \n')
+// TabularRepresentation(maxNameLen, debarredFromTerm)
 
-TabularRepresentation(maxNameLen, debarredFromTerm)
+setTimeout(() => {
+    BarGraphRepresentation(debarredFromTerm)
+}, 1000)

@@ -18,6 +18,8 @@ const printTableHead = (maxNameLen) => {
 }
 
 const TabularRepresentation = (maxNameLen, debarredFromTerm) => {
+    debarredFromTerm.sort((student1, student2) => student2.leaves - student1.leaves)
+    console.log('Debarred From 6th sem exam: \n')
     // print table head
     printTableHead(maxNameLen)
     let nameStr, rollStr, leavesStr, restLen
